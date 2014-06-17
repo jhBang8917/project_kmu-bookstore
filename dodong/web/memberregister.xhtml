@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h:outputLabel value="아이디:"/><h:inputText value="#{memberRegisterView.member.userID}"/>
+                <h:outputLabel value="비밀번호:"/><h:inputText value="#{memberRegisterView.member.password}"/>
+                <h:outputLabel value="이름:"/><h:inputText value="#{memberRegisterView.member.name}"/>
+                <h:commandButton action="#{memberRegisterView.postMember}" value="회원등록"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

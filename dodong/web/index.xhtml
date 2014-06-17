@@ -9,8 +9,24 @@
     <ui:define name="content">
 
         <h:form>
+            <!-- 도서등록 화면으로 이동 -경원-->
+            <h:commandLink id="gotoregister" 
+                           action="bookregister" 
+                           immediate="true">
+                           <h:outputText value="도서등록"/>
+            </h:commandLink>
+            <!-- 도서등록 화면으로 이동 -경원-->
             
+            <!-- 회원등록 화면으로 이동 -경원-->
+            <h:commandButton id="gotomemregister" 
+                           action="memberregister" 
+                           immediate="true"
+                           value="회원등록">
+            </h:commandButton>
+            <!-- 회원등록 화면으로 이동 -경원-->
         </h:form>
+        
+        
     </ui:define>
 </ui:composition>
 
