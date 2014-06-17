@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+회원 가입을 위한 페이지
+written by 은정
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      template="/BookStoreTemplate.xhtml">
+ 
+    <ui:define name="top"></ui:define>
+    <ui:define name="content">
+        <h:form id="memberregister">
+            <h:panelGrid columns="2"
+                         headerClass="list-header"
+                         styleClass="list-background"
+                         rowClasses="list-row-even, list-row-odd"
+                         summary="#{bundle.MemberInfo}">
+                <h:outputLabel for="id" value="#{bundle.ID}"/>
+                <inputText id="id" 
+                           size="15" 
+                          
+                           required="true"
+                           requiredMessage="#{bundle.ReqUserID}"/>
+                <h:message styleClass="error-message" for="id"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
