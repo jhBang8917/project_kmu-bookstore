@@ -1,24 +1,30 @@
-#top {
+// 홈페이지 디자인을 위한 CSS 파일
+// @author 은정
+div#top {
     position: relative;
     background-color: #036fab;
     color: white;
     padding: 5px;
     margin: 0px 0px 10px 0px;
 }
-body {
+div#content 
+{
     background-color: #ffffff;
     font-size: 12px;
     font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Helvetica CE", sans-serif;
     color: #000000;  
-    margin: 10px;
+    width: auto;
+    margin: 0px auto;
 }
 
-h1 {
-    font-family: Arial, "Arial CE", "Helvetica CE", sans-serif;
-    border-bottom: 1px solid #AFAFAF; 
-    font-size:  40px;
-    font-weight: bold;
-    margin: 0px;
-    padding: 0px;
-    color: #045491;
+div#booklist
+{
+    float:left;
+    background-color:#D5D5D5;
+    width: 500px;   
+}
+div#member
+{ 
+    border: 3px solid silver;
+    width: 250px;
 }
