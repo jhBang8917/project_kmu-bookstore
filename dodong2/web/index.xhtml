@@ -82,15 +82,7 @@
                     </p>
                     </h:panelGrid>
                     
-                    <h:panelGroup
-                        rendered="#{loginBean.loggedIn}">
-                        <h:outputText value="#{loginBean.sessionID}"/>
-                        <h:commandButton id="logout"
-                                         action="#{loginBean.logout()}"
-                                          immediate="true"
-                                          value="로그아웃">
-                        </h:commandButton>
-                    </h:panelGroup>
+                    
                     
                     
                 </div>
