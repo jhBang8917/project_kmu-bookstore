@@ -9,7 +9,6 @@
     <ui:define name="top"></ui:define> 
     <ui:define name="content">
         <f:view>
-           
             <h:form>
                 <h:outputLabel value="도서명"/><h:inputText value="#{bookRegisterView.book.title}"/>
                 <h:outputLabel value="저자"/><h:inputText value="#{bookRegisterView.book.author}"/>
@@ -17,7 +16,6 @@
                 <h:outputLabel value="매입가"/><h:inputText value="#{bookRegisterView.book.boughtPrice}"/>
                 <h:outputLabel value="판매가"/><h:inputText value="#{bookRegisterView.book.sellPrice}"/>
                 <h:outputLabel value="재고량"/><h:inputText value="#{bookRegisterView.book.stock}"/>
-                <h:outputLabel value="설명"/><h:inputText value="#{bookRegisterView.book.description}"/>                
                 <h:commandButton action="#{bookRegisterView.postBook()}" value="도서등록"/>
             </h:form>
         </f:view>

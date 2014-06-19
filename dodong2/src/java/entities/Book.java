@@ -27,8 +27,7 @@ public class Book implements Serializable {
     private String publisher;
     private int boughtPrice;
     private int sellPrice;
-    private int stock; 
-    private String Description;
+    private int stock;   
     
     
     public Long getId() {
@@ -86,15 +85,9 @@ public class Book implements Serializable {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String Description) {
-        this.Description = Description;
-    }
     
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
