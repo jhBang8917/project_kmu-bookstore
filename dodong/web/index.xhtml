@@ -3,6 +3,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
                 template="./BookStoreTemplate.xhtml">
     
     <ui:define name="top"></ui:define> 
@@ -10,7 +11,76 @@
 
         <h:form>
             
-        </h:form>
+                <!-- 도서 리스트를 출력하기 위한 레이아웃 / 은정 -->
+                <div id="booklist">
+                    <!-- books의 value는 빈즈 만든 다음에 넣어주기-->
+                    <h:dataTable id="books"
+                             
+                                  var="book"
+                                  headerClass="list-header"
+                                  styleClass="list-background"
+                                  rowClasses="list-row-even, list-row-odd"
+                                  border="1">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.BookTitle}"/>
+                            </f:facet>
+                            <h:commandLink action="bookregister" value="Test Text"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.Write}"/>
+                            </f:facet>
+                            <h:outputText value="writer"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                              <h:outputText value="#{bundle.Price}"/>
+                            </f:facet>
+                        </h:column>                       
+                    </h:dataTable>
+                </div>
+            
+                <!-- 회원 가입 및 로그인을 위한 영역 / 은정 -->
+                <div id="member">
+                    <!-- 로그인 부분 -->
+                    <h:panelGrid columns="2"
+                                headerClass="list-header"
+                                styleClass="list-background"
+                                rowClasses="list-row-even, list-row-odd">
+                        <h:outputLabel for="userID" value="#{bundle.userID}" />
+                        <h:inputText id="userID"
+                                       size="10"
+                             
+                                       required="true"
+                                       requiredMessage="#{bundle.ReqUserID}">
+                        </h:inputText>
+                        <h:outputLabel for="userPwd" value="#{bundle.userPwd}"/>
+                        <h:inputText id="userPwd"
+                                       size="15"
+                             
+                                       required="true"
+                                       requiredMessage="#{bundle.ReqUserPwd}">
+                        </h:inputText>
+                    </h:panelGrid>
+                    <p>
+                        <h:commandButton value="#{bundle.login}"/>
+                        <!-- 회원 등록 화면으로 이동 -경원-->
+                        <h:commandButton id="gotomemregister"
+                                          action="memberregister"
+                                          immediate="true"
+                                          value="#{bundle.addMember}">
+                        </h:commandButton>
+                    </p>
+                </div>
+            
+            <!-- 도서등록 화면으로 이동 -경원-->
+            <h:commandButton id="gotoregister" 
+                           action="bookregister" 
+                           immediate="true"
+                           value="#{bundle.addBook}">
+            </h:commandButton>
+        </h:form>        
     </ui:define>
 </ui:composition>
 
