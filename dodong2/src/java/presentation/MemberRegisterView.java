@@ -7,8 +7,10 @@
 package presentation;
 
 import boundary.MemberFacade;
-import javax.ejb.EJB;
 import entities.Member;
+import java.util.List;
+import java.util.ListIterator;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -43,6 +45,24 @@ public class MemberRegisterView {
         return "registerdmemberview";
     }
     
+     public List<Member> getMemberList(){
+        
+        return memberFacade.findAll();
+        
+    }//end of getBookList
     
-    
+     public List<Member> getInStockMemberList(){
+        
+        List<Member> memberList = getMemberList();
+        ListIterator it = memberList.listIterator();
+        Member member;
+        
+        while(it.hasNext()){
+            
+            member = (Member)it.next();
+           
+        }//end of while
+        return memberList;
 }
+}
+
