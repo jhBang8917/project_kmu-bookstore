@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 template="./BookStoreTemplate.xhtml">
+    
     
     <ui:define name="top"></ui:define> 
     <ui:define name="content">
@@ -46,35 +48,43 @@
             
                 <!-- 회원 가입 및 로그인을 위한 영역 / 은정 -->
                 <div id="member">
-                    <!-- 로그인 부분 -->
+                    <!-- 로그인 부분 / 완진-->
+                    
                     <h:panelGrid columns="2"
                                 headerClass="list-header"
                                 styleClass="list-background"
-                                rowClasses="list-row-even, list-row-odd">
+                                rowClasses="list-row-even, list-row-odd"
+                                rendered="#{!loginBean.loggedIn}">
+                      
                         <h:outputLabel for="userID" value="#{bundle.userID}" />
                         <h:inputText id="userID"
                                        size="10"
-                             
                                        required="true"
-                                       requiredMessage="#{bundle.ReqUserID}">
+                                       requiredMessage="#{bundle.ReqUserID}"
+                                       value="#{loginBean.member.userID}">
                         </h:inputText>
                         <h:outputLabel for="userPwd" value="#{bundle.userPwd}"/>
                         <h:inputText id="userPwd"
                                        size="15"
-                             
                                        required="true"
-                                       requiredMessage="#{bundle.ReqUserPwd}">
+                                       requiredMessage="#{bundle.ReqUserPwd}"
+                                       value="#{loginBean.member.password}">
                         </h:inputText>
-                    </h:panelGrid>
-                    <p>
-                        <h:commandButton value="#{bundle.login}"/>
+                        <p>
+                       <h:commandButton id="login" action="checkLoginView" value="#{bundle.login}"/>
                         <!-- 회원 등록 화면으로 이동 -경원-->
+                        
                         <h:commandButton id="gotomemregister"
                                           action="memberregister"
                                           immediate="true"
                                           value="#{bundle.addMember}">
                         </h:commandButton>
                     </p>
+                    </h:panelGrid>
+                    
+                    
+                    
+                    
                 </div>
             
             <!-- 도서등록 화면으로 이동 -경원-->
